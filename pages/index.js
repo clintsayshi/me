@@ -56,9 +56,11 @@ export default function Home() {
 
       <section id="skills" className="bg-gray-100">
         <div className=" container mx-auto py-32 flex flex-col justify-center items-center gap-4">
-          <SectionHeading text="Technologies I work with" />
+          <h2 className="w-full text-3xl font-bold text-left sm:text-center">
+            Technologies I work with
+          </h2>
           <div>
-            <p className="text-base text-center lg:w-10/12 mx-auto">
+            <p className="text-base sm:text-center lg:w-10/12 sm:mx-auto">
               Some of the web technologies I work with. I have created this
               website using Nextjs, TailwindCSS and Netlify CMS
             </p>
