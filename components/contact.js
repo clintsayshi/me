@@ -10,8 +10,8 @@ function Contact() {
         </h2>
         <div className="flex flex-col items-center">
           <p className="my-2 text-base text-center lg:w-10/12 mx-auto">
-            Feel free to reach out if you're looking to hire, to connect or if
-            you want us to work on something.
+            {`Feel free to reach out if you're looking to hire, to connect or if
+              you want us to work on something.`}
           </p>
 
           <a

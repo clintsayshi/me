@@ -15,7 +15,7 @@ function Header() {
     return (
       <section className="relative h-80 sm:h-88 justify-center flex flex-col space-y-6 z-10">
         <h1 className="text-4xl sm:text-4xl md:text-5xl text-center font-medium">
-          Hi, I'm Clinton <br />
+          {` Hi, I'm Clinton`} <br />
           <span className="text-2xl sm:text-3xl">A frontend developer</span>
         </h1>
 
