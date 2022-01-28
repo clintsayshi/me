@@ -1,0 +1,63 @@
+backend:
+  name: test-repo
+
+  branch: main
+  repo: test-repo
+
+local_backend: true
+media_folder: /assets/
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: home
+        name: home
+        file: "content/pages/home.md"
+        fields:
+          - { label: "Hero Image", name: "heroImage", widget: "image" }
+          - {
+              label: "Heading",
+              name: "heading",
+              widget: "string",
+              default: "hi, I'm Clinton",
+            }
+          - {
+              label: "Subheading",
+              name: "subHeading",
+              widget: "string",
+              default: "a frontend web developer",
+            }
+          - {
+              label: "About me",
+              name: "about",
+              widget: "text",
+              default: "a beginner to intermediate Web Developer proficient in HTML, CSS, Javascript and frameworks such as Reactjs, Nextjs and Gatbsyjs",
+            }
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            summary: "{{fields.main}}"
+            fields:
+              - { label: "Main", name: "main", widget: "string" }
+              - label: "Subskills"
+                name: "list"
+                widget: "list"
+                field: { label: "Skill", name: "name", widget: "string" }
+
+  - name: "projects"
+    label: "project"
+    folder: "content/projects"
+    create: true
+    slug: "{{fields.title}}"
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "string" }
+      - { label: "Featured Project", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        summary: "{{fields.name}}"
+        field: { label: "Tag", name: "name", widget: "string" }
