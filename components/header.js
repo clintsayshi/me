@@ -31,7 +31,7 @@ function Header() {
   return (
     <header
       id="__header"
-      className="relative w-full h-auto bg-fixed bg-cover bg-center bg-[url('/assets/macbook-and-phone.jpg')]"
+      className={`relative w-full h-auto bg-fixed bg-cover bg-bottom bg-[url(/assets/macbook.jpg)]`}
     >
       <Script
         src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"
@@ -54,15 +54,6 @@ function Header() {
         }}
       />
 
-      <Image
-        className="absolute inset-0"
-        src="/assets/macbook.jpg"
-        alt=""
-        objectFit="contain"
-        layout="fill"
-        blurDataURL={rgbDataURL}
-      />
-
       <nav className="relative container mx-auto flex justify-between items-center z-30">
         <h3 className="py-4 text-lg font-medium font-mono uppercase">
           Clinton
@@ -71,7 +62,7 @@ function Header() {
         <button
           id="menuIcon"
           onClick={toggleMenu}
-          className="sm:hidden h-12 w-12 group p-1 focus-within:bg-gray-50 transition-all"
+          className="sm:hidden h-12 w-12 group p-1 transition-all"
         ></button>
 
         <ul className="hidden sm:flex items-center space-x-4">
