@@ -3,6 +3,8 @@ import Script from "next/script";
 import Image from "next/image";
 import { rgbDataURL } from "../utils/blurUrl";
 
+import { attributes as data } from "../content/pages/home.md";
+
 function Header() {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
@@ -31,7 +33,7 @@ function Header() {
   return (
     <header
       id="__header"
-      className={`relative w-full h-auto bg-fixed bg-cover bg-bottom bg-[url(/assets/macbook.jpg)]`}
+      className={`relative w-full h-auto bg-fixed bg-cover bg-bottom bg-[url('/assets/work-station.jpg')]`}
     >
       <Script
         src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"

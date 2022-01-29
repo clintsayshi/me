@@ -1,13 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
+import path from "path";
+import fs from "fs";
 import Contact from "../components/contact";
-//import {} from "react"
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Project from "../components/project";
 import { rgbDataURL } from "../utils/blurUrl";
 
-export default function Home() {
+import { attributes as data } from "../content/pages/home.md";
+import matter from "gray-matter";
+
+export default function Home({ projects }) {
+  console.log(projects);
+
   const SectionHeading = ({ text }) => {
     return <h2 className="text-3xl font-bold">{text}</h2>;
   };
@@ -39,11 +45,7 @@ export default function Home() {
 
         <div>
           <p className="text-base text-center lg:w-10/12 mx-auto">
-            I design and code websites. I am currently job seeking and open for
-            freelance work. If I am not working on coding skills I like to watch
-            series and movies, go for walks, I've also been planning to learn
-            skateboarding. Scroll down to learn more about my skills and
-            projects.
+            {data.about}
           </p>
         </div>
       </section>
@@ -61,25 +63,15 @@ export default function Home() {
           </div>
 
           <div className="w-full flex flex-col sm:flex-row justify-center items-start gap-4 sm:gap-8">
-            <article className="flex flex-col gap-2">
-              <p className="capitalize font-medium">HTML &amp; CSS</p>
-              <p className="capitalize">SCSS</p>
-              <p className="capitalize">TailwindCSS</p>
-            </article>
-
-            <article className="flex flex-col gap-2">
-              <p className="capitalize">Javascript</p>
-              <p className="capitalize">React</p>
-              <p className="capitalize">NextJs</p>
-              <p className="capitalize">GatsbyJs</p>
-            </article>
-
-            <article className="flex flex-col gap-2">
-              <p className="capitalize">State Management - Redux</p>
-              <p className="capitalize">Netlify CMS</p>
-              <p className="capitalize">Git</p>
-              <p className="capitalize">Github</p>
-            </article>
+            {data.skills.map((main, index) => (
+              <article key={index} className="flex flex-col gap-2">
+                {main.list.map((skill, key) => (
+                  <p key={key} className="capitalize font-medium">
+                    {skill}
+                  </p>
+                ))}
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -87,22 +79,22 @@ export default function Home() {
       {/* Projects start */}
       <section
         id="projects"
-        className="container mx-auto py-32 flex flex-col justify-center items-center gap-4"
+        className="container mx-auto py-32 flex flex-col justify-center items-center gap-5"
       >
         <h2 className="w-full text-3xl font-bold text-left sm:text-center">
           Some of my projects
         </h2>
-        <div className="block">
+        {/* <div className="block">
           <p className="hidden text-base text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
             eligendi culpa eum tempora obcaecati quo!
           </p>
-        </div>
+        </div> */}
 
         <div className="w-full space-y-8">
-          <Project />
-          <Project />
-          <Project />
+          {projects.map((item, key) => (
+            <Project key={key} {...item} />
+          ))}
         </div>
       </section>
       {/* Projects end */}
@@ -113,3 +105,28 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  let files = fs.readdirSync("content/projects");
+
+  files = files.map((item) => {
+    const markdownWithMetadata = fs
+      .readFileSync(path.join("content/projects", item))
+      .toString();
+
+    const parsedMarkdown = matter(markdownWithMetadata);
+
+    return {
+      data: parsedMarkdown.data,
+      slug: item.replace(".md", ""),
+    };
+  });
+
+  console.log(files);
+
+  return {
+    props: {
+      projects: files,
+    },
+  };
+};
