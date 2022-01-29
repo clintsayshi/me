@@ -5,7 +5,8 @@ backend:
   repo: mcclintsayshi/me
 
 local_backend: true
-media_folder: /assets/
+media_folder: /public/assets/
+public_folder: /assets/
 collections:
   - label: "Pages"
     name: "pages"
@@ -52,6 +53,7 @@ collections:
     fields:
       - { label: "Project Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Url", name: "url", widget: "string" }
       - { label: "Excerpt", name: "excerpt", widget: "string" }
       - { label: "Featured Project", name: "featuredpost", widget: "boolean" }
       - { label: "Featured Image", name: "featuredimage", widget: image }
