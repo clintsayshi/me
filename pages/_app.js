@@ -4,20 +4,21 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      {/* Global site tag (gtag.js) - Google Analytics */}
-
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=G-BVJS3VNRKR`}
-        strategy="lazyOnLoad"
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
-      <Script id="second-script" strategy="lazyOnLoad">
-        {` window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
 
-          gtag("config", "G-BVJS3VNRKR");`}
+      <Script strategy="lazyOnload">
+        {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+                `}
       </Script>
       <Component {...pageProps} />
     </>
