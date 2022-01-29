@@ -35,7 +35,7 @@ function Header() {
     >
       <Script
         src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"
-        strategy="lazyOnLoad"
+        strategy="beforeInteractive"
         onLoad={() => {
           let iconMenu = document.querySelector("#menuIcon");
           let animationMenu = bodymovin.loadAnimation({
