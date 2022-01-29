@@ -1,3 +1,4 @@
+import { Avatar } from "avataaars";
 import React from "react";
 
 function About() {
