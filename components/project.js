@@ -31,7 +31,8 @@ function Project(props) {
           <a
             id="__live-link"
             href={data.url}
-            target={"_blank"}
+            target="_blank"
+            rel="noreferrer"
             className="relative px-4 py-1 overflow-hidden rounded bg-white hover:bg-green-400  group"
           >
             <span className="block relative text-sm text-green-900 font-medium capitalize z-10">
