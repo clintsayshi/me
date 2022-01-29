@@ -46,7 +46,6 @@
   inset: 0;
   width: 200px;
   height: 80px;
-  background: linear-gradient(to top, #f77062 0%, #fe5196 100%);
   background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
   animation: animate 4s linear infinite;
 }
