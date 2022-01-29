@@ -1,8 +1,8 @@
 backend:
-  name: mcclintsayshi/me
+  name: git-gateway
 
   branch: main
-  repo: git-gateway
+  repo: mcclintsayshi/me
 
 local_backend: true
 media_folder: /assets/
