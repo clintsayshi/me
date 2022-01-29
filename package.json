@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "avataaars": "^2.0.0",
     "frontmatter-markdown-loader": "^3.6.3",
     "gray-matter": "^4.0.3",
     "marked": "^4.0.10",
