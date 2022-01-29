@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Script from "next/script";
+import Image from "next/image";
+import { rgbDataURL } from "../utils/blurUrl";
 
 function Header() {
   const [isMenuOpen, setisMenuOpen] = useState(false);
@@ -50,6 +52,15 @@ function Header() {
             directionMenu = -directionMenu;
           });
         }}
+      />
+
+      <Image
+        className="absolute inset-0"
+        src="/assets/macbook.jpg"
+        alt=""
+        objectFit="contain"
+        layout="fill"
+        blurDataURL={rgbDataURL}
       />
 
       <nav className="relative container mx-auto flex justify-between items-center z-30">
