@@ -36,7 +36,7 @@ function Contact() {
             </a>
             <a
               className="border hover:border-black transition-color ease-in-out group py-2 px-2 rounded"
-              href="http://twitter.com/mcclintsayshi"
+              href="http://twitter.com/clintsayshi"
             >
               <FiTwitter className="text-3xl sm:text-xl text-gray-500 transition-all ease-in-out group-hover:text-black group-focus-within:text-black" />
             </a>
