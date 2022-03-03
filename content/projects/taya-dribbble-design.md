@@ -1,4 +1,3 @@
-
 ---
 title: Taya Landing Page
 slug: weekend-challenge-taya
