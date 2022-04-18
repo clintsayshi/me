@@ -12,8 +12,6 @@ import { attributes as data } from "../content/pages/home.md";
 import matter from "gray-matter";
 
 export default function Home({ projects }) {
-  console.log(projects);
-
   const SectionHeading = ({ text }) => {
     return <h2 className="text-3xl font-bold">{text}</h2>;
   };
@@ -53,7 +51,7 @@ export default function Home({ projects }) {
       <section id="skills" className="bg-gray-100">
         <div className=" container mx-auto py-32 flex flex-col justify-center items-center gap-4">
           <h2 className="w-full text-3xl font-bold text-left sm:text-center">
-            Technologies I work with
+            Tech Stack
           </h2>
           <div>
             <p className="text-base sm:text-center lg:w-10/12 sm:mx-auto">
@@ -121,8 +119,6 @@ export const getStaticProps = async () => {
       slug: item.replace(".md", ""),
     };
   });
-
-  console.log(files);
 
   return {
     props: {
