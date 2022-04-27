@@ -14,7 +14,7 @@ skills:
       - TailwindCSS
   - main: Javascript
     list:
-      - Javscript
+      - Javascript
       - React
       - Nextjs
       - Gatsbyjs
