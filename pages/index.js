@@ -56,7 +56,7 @@ export default function Home({ projects }) {
           <div>
             <p className="text-base sm:text-center lg:w-10/12 sm:mx-auto">
               Some of the web technologies I work with. I have created this
-              website using Nextjs, TailwindCSS and Netlify CMS
+              website using Nextjs, TailwindCSS and Netlify CMS.
             </p>
           </div>
 
